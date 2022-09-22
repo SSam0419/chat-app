@@ -1,0 +1,8 @@
+{
+  "chatrooms": [
+    { "id": 1, "name": "Movies Lovers", "users": [], "messages": [] },
+    { "id": 2, "name": "Books Lovers", "users": [], "messages": [] },
+    { "id": 3, "name": "Programmers", "users": [], "messages": [] }
+  ],
+  "users": [{ "id": 1, "username": "haha", "password": "haha" }]
+}

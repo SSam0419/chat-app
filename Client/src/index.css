@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  --chatroom-card-width: 625px;
+}
+
+.login-form {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  padding: 40px 150px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.699);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+}
+.login-form label {
+  margin: 10px;
+}
+.login-form input {
+  margin: 10px;
+}
+.login-form input[type="submit"],
+.guest-btn {
+  border: none;
+  padding: 3px 10px;
+  text-align: center;
+  width: 80px;
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+.login-form input[type="submit"]:hover,
+.guest-btn:hover {
+  outline: 1px solid black;
+  transform: scale(1.1);
+}
+.login-form input[type="submit"]:active,
+.guest-btn:active {
+  transform: scale(1);
+}
+.login-form:last-child span {
+  margin: 10px;
+}
+.register-form-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.register-form-body label {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.register-form-body input[type="submit"] {
+  margin-left: 20px;
+}
+#register-link {
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+}
+
+.chatroomList-container {
+  position: absolute;
+  padding: 40px 30px;
+  width: 700px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.699);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.chatroom-card {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 10px;
+  margin: 10px;
+  width: var(--chatroom-card-width);
+}
+.CreateChatroom {
+  margin: 10px;
+}
+.CreateChatroom input {
+  padding: 10px;
+  width: var(--chatroom-card-width);
+}
+
+.chatroom-card:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+}
+.chatroom-card:active {
+  transform: scale(1);
+}
+
+#create-chatroom-btn {
+  border: none;
+  border-radius: 4px;
+  padding: 0px 20px;
+  margin: 10px;
+}
+#create-chatroom-btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#create-chatroom-btn:active {
+  transform: scale(1);
+}
+
+.chatroom-container {
+  position: absolute;
+  padding: 40px 30px;
+  width: 650px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.699);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.chatroom-container .chatroom-body {
+  height: 500px;
+  overflow-y: scroll;
+}
+.chatroom-container .chatroom-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 40px;
+  font-size: 2rem;
+}
+.chatroom-container .chatroom-footer input {
+  width: 90%;
+  padding: 14px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(245, 245, 245, 0.733);
+}
+.submit-msg-btn:hover {
+  cursor: pointer;
+}
+
+.message,
+.message-from-me {
+  margin: 20px 10px;
+  padding: 10px;
+  width: 70%;
+}
+.message {
+  background-color: #bde0fe;
+  text-align: left;
+  margin-right: auto;
+}
+.message-from-me {
+  background-color: #c7f9cc;
+  text-align: right;
+  margin-left: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.return-btn:hover {
+  cursor: pointer;
+}
