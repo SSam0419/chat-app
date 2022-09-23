@@ -5,16 +5,16 @@ const cors = require("cors");
 const fs = require("fs");
 var bodyParser = require("body-parser");
 
+const PORT = "https://git.heroku.com/frozen-dawn-54971.git" || process.env.PORT;
+
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000", //3000 => react dev server
+    origin: "https://chat-app-bvp.pages.dev/", //3000 => react dev server
     methods: ["GET", "POST"],
   },
 });
-
-const PORT = 5000 || process.env.PORT;
 
 app.use(cors());
 

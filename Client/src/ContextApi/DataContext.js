@@ -4,7 +4,7 @@ import io from "socket.io-client";
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
-  const dataUrl = "http://localhost:5000";
+  const dataUrl = "https://git.heroku.com/frozen-dawn-54971.git";
 
   const socket = io.connect(dataUrl); // 5000 => socket io server
 
