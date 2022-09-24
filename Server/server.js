@@ -4,17 +4,26 @@ const { Server } = require("socket.io");
 const cors = require("cors");
 const fs = require("fs");
 var bodyParser = require("body-parser");
+const path = require("path");
 
-const PORT = "https://git.heroku.com/frozen-dawn-54971.git" || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-app-bvp.pages.dev/", //3000 => react dev server
+    origin: "https://chat-app-bvp.pages.dev", //3000 => react dev server
     methods: ["GET", "POST"],
   },
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("Client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "Client", "build", "index.html"));
+  });
+}
 
 app.use(cors());
 
