@@ -6,10 +6,11 @@ const fs = require("fs");
 var bodyParser = require("body-parser");
 const path = require("path");
 
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
 const app = express();
 const server = http.createServer(app);
+// const io = socketio(server);
 const io = new Server(server, {
   cors: {
     origin: "https://chat-app-bvp.pages.dev", //3000 => react dev server
@@ -17,13 +18,13 @@ const io = new Server(server, {
   },
 });
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("Client/build"));
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("Client/build"));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "Client", "build", "index.html"));
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "Client", "build", "index.html"));
+//   });
+// }
 
 app.use(cors());
 
@@ -216,6 +217,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log("listening on *:", PORT);
+server.listen(process.env.PORT || 5000, () => {
+  console.log(`Server has started.`);
 });
